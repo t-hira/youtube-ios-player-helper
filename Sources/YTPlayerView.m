@@ -923,6 +923,8 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
 }
 
 - (void)removeWebView {
+  self.webView.navigationDelegate = nil;
+  self.webView.UIDelegate = nil;
   [self.webView removeFromSuperview];
   self.webView = nil;
 }
